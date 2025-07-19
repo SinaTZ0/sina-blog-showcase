@@ -1,0 +1,17 @@
+pre-push:
+  jobs:
+    - script: "validate-branch-name.sh"
+      runner: bash
+
+pre-commit:
+  parallel: true
+  jobs:
+    - run: npm run lint2 {staged_files}
+      glob: "*.{js,jsx,ts,tsx}"
+    - run: npm run format:staged {staged_files}
+      glob: "*.{js,jsx,ts,tsx}"
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    - run:  npx --no -- commitlint --edit {1}
