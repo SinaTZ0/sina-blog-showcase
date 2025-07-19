@@ -43,7 +43,7 @@ Following [Conventional Commits](https://www.conventionalcommits.org/) standard:
 - ✅ `chore(deps): update react to v18.2.0`
 - ✅ `refactor(utils): simplify date formatting function`
 
-## Pull Request Naming
+## Pull Request Naming(remmeber to mention the closed issues in description like: - closed #1 )
 
 **Format**: `<type>: <brief description>`
 
