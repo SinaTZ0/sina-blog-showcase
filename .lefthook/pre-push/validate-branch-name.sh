@@ -7,7 +7,8 @@ branch_name=$(git symbolic-ref --short HEAD)
 # Types: feature, bugfix, hotfix, chore, docs, test, build
 # Issue number: one or more digits
 # Brief description: kebab-case (lowercase letters, numbers, hyphens)
-regex="^(feature|bugfix|hotfix|chore|docs|test|build)\/([0-9]+)-([a-z0-9]+(-[a- -9]+)*)$"
+# New, corrected regex
+regex="^(feature|bugfix|hotfix|chore|docs|test|build)\/([0-9]+)-([a-z0-9]+(-[a-z0-9]+)*)$"
 
 # Check if the branch name matches the regex
 if [ "$branch_name" = "main" ] || [[ "$branch_name" =~ $regex ]]; then
