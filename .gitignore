@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# github ToDo issues
+/todos
+
 # next.js
 /.next/
 /out/
