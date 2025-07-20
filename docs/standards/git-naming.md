@@ -29,6 +29,16 @@
 - ✅ `hotfix/789-security-patch`
 - ✅ `chore/321-update-dependencies`
 
+### Branches Without GitHub Issues
+
+Use `000` as the issue number when the branch is not linked to any GitHub issue.
+
+**Examples**:
+
+- ✅ `chore/000-eslint-autofix`
+- ✅ `docs/000-readme-update`
+- ✅ `refactor/000-cleanup-legacy-code`
+
 ## Commit Messages
 
 **Format**: `<type>(<scope>): <issue-task-name> || <description>`
@@ -43,7 +53,7 @@ Following [Conventional Commits](https://www.conventionalcommits.org/) standard:
 - ✅ `chore(deps): update react to v18.2.0`
 - ✅ `refactor(utils): simplify date formatting function`
 
-## Pull Request Naming(remmeber to mention the closed issues in description like: - closed #1 )
+## Pull Request Naming(remember to mention the closed issues in description like: - closed #1 )
 
 **Format**: `<type>: <brief description>`
 
