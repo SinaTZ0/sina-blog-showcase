@@ -53,9 +53,28 @@ Following [Conventional Commits](https://www.conventionalcommits.org/) standard:
 - ✅ `chore(deps): update react to v18.2.0`
 - ✅ `refactor(utils): simplify date formatting function`
 
-## Pull Request Naming(remember to mention the closed issues in description like: - closed #1 )
+### Merge Commit Messages (For Squash & Merge)
 
-**Format**: `<type>: <brief description>`
+When using **squash and merge**:
+
+- ✅ **The PR title and the final squash commit message must be identical**
+- ✅ **The squash commit message must include a reference to the PR number**
+
+**Example**:
+
+- PR Title:  
+  `fix(login): Resolve login redirect issue`
+
+- Squash Commit Message:  
+  `fix(login): Resolve login redirect issue (#3)`
+
+## Pull Request Naming
+
+> **remember to mention the closed issues in description like:** - closed #1
+
+> to checkout the naming convention for **squash and merge** commit chech out **Merge Commit Messages** section in **Commit Messages**
+
+**Format**: `<type>(<scope>): <brief description>`
 
 **Examples**:
 
