@@ -1,10 +1,10 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
 
+import { FlatCompat } from "@eslint/eslintrc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import reactCompiler from "eslint-plugin-react-compiler";
 import pluginPromise from "eslint-plugin-promise";
+import reactCompiler from "eslint-plugin-react-compiler";
 import sonarjs from "eslint-plugin-sonarjs";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -45,6 +45,43 @@ const eslintConfig = [
   //     // Add other specific rules you want
   //   },
   // },
+  {
+    rules: {
+      "import/order": [
+        "warn",
+        {
+          groups: [
+            "builtin", // Built-in imports (e.g., 'fs', 'path')
+            "external", // External imports (e.g., 'react', 'lodash')
+            "internal", // Internal imports (resolves based on 'paths' in tsconfig.json)
+            ["parent", "sibling", "index"], // Relative imports
+            "object", // 'object'-imports (not common)
+            "type", // Type imports
+          ],
+          pathGroups: [
+            // This rule ensures 'react' always comes first
+            {
+              pattern: "react",
+              group: "external",
+              position: "before",
+            },
+            // Add any other custom groupings here.
+            // For example, if you have a '@/' alias for your 'src' folder:
+            {
+              pattern: "@/**",
+              group: "internal",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["react"],
+          "newlines-between": "always", // Enforce newlines between groups
+          alphabetize: {
+            order: "asc", // Sort in ascending order
+            caseInsensitive: true, // Ignore case
+          },
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;
